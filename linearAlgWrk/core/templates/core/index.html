@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<html>
+   	<head>
+	   
+		<title> Linear Algebra Workshop </title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+       		<link rel="stylesheet" href="{% static 'css/core.css' %}">
+	</head>
+	<body>
+		<h1>Hello</h1>
+		<p>test</p>
+		{% block content %}
+    		<h1>Input</h1>
+    			<form method="POST" class="input">{% csrf_token %}
+        		{{ InputForm.as_p }}
+      		  	<button type="submit" class="save btn btn-default">Enter</button>
+    			</form>
+		{% endblock %}
+	</body>
+
+</html>
