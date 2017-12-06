@@ -10,15 +10,27 @@
 	<body>
 		<h1>Hello</h1>
 		<p>test</p>
+
+
+
+
+
 		<div class="inputblock">
-		{% block content %}
-    			<form method="POST" class="input">{% csrf_token %}
+			<form action="{% url 'size' %}" method="POST" class="size_Entry">{% csrf_token %}
+				<p class = "entry_form">
+					{{ size_form }}
+					<button type="submit" class"save_input">Enter</button>
+				</p>
+			</form>
+		
+			<form action="{% url 'input' %}" method="POST" class="input">{% csrf_token %}
 				<p class="inner_form">	
-        				{{ input_str }}
+        				{{ input_form }}
       		  			<button type="submit" class="save_input">Enter</button>
 				</p>
     			</form>
-		{% endblock %}
+	
+		</div>
 	</body>
 
 </html>

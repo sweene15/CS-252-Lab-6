@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+from core.views import MainView, InputFormView, SizeFormView
+#urlpatterns = [
+#    url(r'^admin/', admin.site.urls),
+#    url(r'',include('core.urls')),
+#]
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'',include('core.urls')),
+    url(r'^$', MainView.as_view(), name='main'),
+    url(r'^input/submit', InputFormView.as_view(), name='input'),
+    url(r'^size/submit', SizeFormView.as_view(), name='size'),
 ]
