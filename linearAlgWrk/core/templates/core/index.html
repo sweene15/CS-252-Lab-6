@@ -10,11 +10,13 @@
 	<body>
 		<h1>Hello</h1>
 		<p>test</p>
+		<div class="inputblock">
 		{% block content %}
-    		<h1>Input</h1>
     			<form method="POST" class="input">{% csrf_token %}
-        		{{ InputForm.as_p }}
-      		  	<button type="submit" class="save btn btn-default">Enter</button>
+				<p class="inner_form">	
+        				{{ input_str }}
+      		  			<button type="submit" class="save_input">Enter</button>
+				</p>
     			</form>
 		{% endblock %}
 	</body>

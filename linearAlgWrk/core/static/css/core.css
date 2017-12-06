@@ -1,6 +1,28 @@
 h1 {
-	color: #6E22FF;
+	color: #6EFFFF;
 }
 p {
-	color: #36FFFB;
+	color: #000000;
+}
+
+.inputblock {
+	margin-bottom: 70px;
+	margin-left: 20px;
+}
+
+.input label{
+	font-family: 'Centaur';
+   	font-size: 24px;
+	vertical-align:middle;
+   
+}
+.input input, textarea{
+	margin-left: 10px;
+	width: 50%;
+	height: 24px;
+	vertical-align:middle;
+}
+.save_input{
+	vertical-align:middle;
+	height: 24px;
 }
