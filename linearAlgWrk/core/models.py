@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django import forms
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Create your models here.
 
 INPUT_CHOICES = (
@@ -17,15 +20,50 @@ SIZE_CHOICES = (
     ('4', '4'),
     ('5', '5'),
 )
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
+
+
+
 
 class Var(models.Model):
+    profile = models.ForeignKey(Profile)
     row_length = models.IntegerField(null=True)
     col_length = models.IntegerField(null=True)
-    row1 = models.ForeignKey('Row', related_name = 'row1', null=True, on_delete=models.CASCADE,)
-    row2 = models.ForeignKey('Row', related_name = 'row2', null=True, on_delete=models.CASCADE,)
-    row3 = models.ForeignKey('Row', related_name = 'row3', null=True, on_delete=models.CASCADE,)
-    row4 = models.ForeignKey('Row', related_name = 'row4', null=True, on_delete=models.CASCADE,)
-    row5 = models.ForeignKey('Row', related_name = 'row5', null=True, on_delete=models.CASCADE,)
+    row1element1 = models.IntegerField(null=True)
+    row1element2 = models.IntegerField(null=True)
+    row1element3 = models.IntegerField(null=True)
+    row1element4 = models.IntegerField(null=True)    
+    row1element5 = models.IntegerField(null=True)
+    row2element1 = models.IntegerField(null=True)
+    row2element2 = models.IntegerField(null=True)
+    row2element3 = models.IntegerField(null=True)
+    row2element4 = models.IntegerField(null=True)    
+    row2element5 = models.IntegerField(null=True)
+    row3element1 = models.IntegerField(null=True)
+    row3element2 = models.IntegerField(null=True)
+    row3element3 = models.IntegerField(null=True)
+    row3element4 = models.IntegerField(null=True)    
+    row3element5 = models.IntegerField(null=True)
+    row4element1 = models.IntegerField(null=True)
+    row4element2 = models.IntegerField(null=True)
+    row4element3 = models.IntegerField(null=True)
+    row4element4 = models.IntegerField(null=True)    
+    row4element5 = models.IntegerField(null=True)
+    row5element1 = models.IntegerField(null=True)
+    row5element2 = models.IntegerField(null=True)
+    row5element3 = models.IntegerField(null=True)
+    row5element4 = models.IntegerField(null=True)    
+    row5element5 = models.IntegerField(null=True)
     pass
 
 
@@ -37,17 +75,9 @@ class Input(models.Model):
     def __str__(self):
         return self.input_type
 
-class Row(models.Model):
-    row_length = models.IntegerField(null=True)
-    element1 = models.IntegerField(null=True)
-    element2 = models.IntegerField(null=True)
-    element3 = models.IntegerField(null=True)
-    element4 = models.IntegerField(null=True)    
-    element5 = models.IntegerField(null=True)
-    pass
-
 class Output(models.Model):
     startVar = models.ForeignKey('Var', related_name = 'startVar', null=True, on_delete=models.CASCADE,)
     endVar = models.ForeignKey('Var', related_name = 'endVar', null=True, on_delete=models.CASCADE,) 
+
 
 

@@ -11,9 +11,10 @@
 		<h1>Hello</h1>
 		<p>test</p>
 
-
-
-
+		<p>
+		{{ clean_row_size }}
+		{{ clean_col_size }}
+		</p>
 
 		<div class="inputblock">
 			<form action="{% url 'size' %}" method="POST" class="size_Entry">{% csrf_token %}
@@ -29,6 +30,315 @@
       		  			<button type="submit" class="save_input">Enter</button>
 				</p>
     			</form>
+			<form action="{% url 'entry' %}" method="POST" class="data_Entry">{% csrf_token %}
+				<p class="inner_form">
+					{{ clean_row_size }}
+
+					{% if clean_row_size == "1" and clean_col_size == "1"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "2" and clean_col_size == "1"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "3" and clean_col_size == "1"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "4" and clean_col_size == "1"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "5" and clean_col_size == "1"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row1elem5">{{entry_form.row1element5}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "1" and clean_col_size == "2"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "2" and clean_col_size == "2"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "3" and clean_col_size == "2"%}	
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element2}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "4" and clean_col_size == "2"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "5" and clean_col_size == "2"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row1elem5">{{entry_form.row1element5}}</div>
+						<div class= "row2elem5">{{entry_form.row2element5}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "1" and clean_col_size == "3"%}	
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "2" and clean_col_size == "3"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "3" and clean_col_size == "3"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+					{%endif %}
+
+					{% if clean_row_size == "4" and clean_col_size == "3"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row3elem4">{{entry_form.row3element4}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "5" and clean_col_size == "3"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row3elem4">{{entry_form.row3element4}}</div>
+						<div class= "row1elem5">{{entry_form.row1element5}}</div>
+						<div class= "row2elem5">{{entry_form.row2element5}}</div>
+						<div class= "row3elem5">{{entry_form.row3element5}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "1" and clean_col_size == "4"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "2" and clean_col_size == "4"%}						
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "3" and clean_col_size == "4"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row4elem3">{{entry_form.row4element3}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "4" and clean_col_size == "4"%}	
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row4elem3">{{entry_form.row4element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row3elem4">{{entry_form.row3element4}}</div>
+						<div class= "row4elem4">{{entry_form.row4element4}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "5" and clean_col_size == "4"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row4elem3">{{entry_form.row4element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row3elem4">{{entry_form.row3element4}}</div>
+						<div class= "row4elem4">{{entry_form.row4element4}}</div>
+						<div class= "row1elem5">{{entry_form.row1element5}}</div>
+						<div class= "row2elem5">{{entry_form.row2element5}}</div>
+						<div class= "row3elem5">{{entry_form.row3element5}}</div>
+						<div class= "row4elem5">{{entry_form.row4element5}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "1" and clean_col_size == "5"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row5elem1">{{entry_form.row5element1}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "2" and clean_col_size == "5"%}	
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row5elem1">{{entry_form.row5element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row5elem2">{{entry_form.row5element2}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "3" and clean_col_size == "5"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row5elem1">{{entry_form.row5element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row5elem2">{{entry_form.row5element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row4elem3">{{entry_form.row4element3}}</div>
+						<div class= "row5elem3">{{entry_form.row5element3}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "4" and clean_col_size == "5"%}						
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row5elem1">{{entry_form.row5element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row5elem2">{{entry_form.row5element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row4elem3">{{entry_form.row4element3}}</div>
+						<div class= "row5elem3">{{entry_form.row5element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row3elem4">{{entry_form.row3element4}}</div>
+						<div class= "row4elem4">{{entry_form.row4element4}}</div>
+						<div class= "row5elem4">{{entry_form.row5element4}}</div>
+					{% endif %}
+
+					{% if clean_row_size == "5" and clean_col_size == "5"%}
+						<div class= "row1elem1">{{entry_form.row1element1}}</div>
+						<div class= "row2elem1">{{entry_form.row2element1}}</div>
+						<div class= "row3elem1">{{entry_form.row3element1}}</div>
+						<div class= "row4elem1">{{entry_form.row4element1}}</div>
+						<div class= "row5elem1">{{entry_form.row5element1}}</div>
+						<div class= "row1elem2">{{entry_form.row1element2}}</div>
+						<div class= "row2elem2">{{entry_form.row2element2}}</div>
+						<div class= "row3elem2">{{entry_form.row3element2}}</div>
+						<div class= "row4elem2">{{entry_form.row4element2}}</div>
+						<div class= "row5elem2">{{entry_form.row5element2}}</div>
+						<div class= "row1elem3">{{entry_form.row1element3}}</div>
+						<div class= "row2elem3">{{entry_form.row2element3}}</div>
+						<div class= "row3elem3">{{entry_form.row3element3}}</div>
+						<div class= "row4elem3">{{entry_form.row4element3}}</div>
+						<div class= "row5elem3">{{entry_form.row5element3}}</div>
+						<div class= "row1elem4">{{entry_form.row1element4}}</div>
+						<div class= "row2elem4">{{entry_form.row2element4}}</div>
+						<div class= "row3elem4">{{entry_form.row3element4}}</div>
+						<div class= "row4elem4">{{entry_form.row4element4}}</div>
+						<div class= "row5elem4">{{entry_form.row5element4}}</div>
+						<div class= "row1elem5">{{entry_form.row1element5}}</div>
+						<div class= "row2elem5">{{entry_form.row2element5}}</div>
+						<div class= "row3elem5">{{entry_form.row3element5}}</div>
+						<div class= "row4elem5">{{entry_form.row4element5}}</div>
+						<div class= "row5elem5">{{entry_form.row5element5}}</div>
+					{% endif %}
+
+      		  			<button type="submit" class="save_input">Enter</button>
+				</p>
+    			</form>
+
+
 	
 		</div>
 	</body>
