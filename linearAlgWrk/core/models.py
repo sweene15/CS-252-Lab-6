@@ -36,7 +36,7 @@ class Profile(models.Model):
 
 
 class Var(models.Model):
-    profile = models.ForeignKey(Profile)
+    profile = models.ForeignKey(Profile, related_name='User', null=True)
     row_length = models.IntegerField(null=True)
     col_length = models.IntegerField(null=True)
     row1element1 = models.IntegerField(null=True)
