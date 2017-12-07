@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from core.views import MainView, InputFormView, SizeFormView, EntryFormView
+from core.views import MainView, InputFormView, SizeFormView, EntryNewFormView, RemoveFormView
 from django.contrib.auth import views as auth_views
+from core import views
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'core/login.html'}, name='login'),
@@ -25,6 +26,7 @@ urlpatterns = [
     url(r'^$', MainView.as_view(), name='main'),
     url(r'^input/submit', InputFormView.as_view(), name='input'),
     url(r'^size/submit', SizeFormView.as_view(), name='size'),
-    url(r'^entry/submit', EntryFormView.as_view(), name='entry'),
-
+    url(r'^entry/submit', EntryNewFormView.as_view(), name='new_entry'),
+    url(r'^remove/submit', RemoveFormView.as_view(), name='remove'),
+    url(r'^signup/$', views.signup, name='signup'),
 ]
