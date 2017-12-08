@@ -33,7 +33,7 @@ class InputForm(forms.ModelForm):
         model = Input
         fields = ['input_type']
         labels = {
-            'input_type': ('Data'),
+            'input_type': ('Operation'),
         }
 
         
