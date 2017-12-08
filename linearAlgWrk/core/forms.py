@@ -1,7 +1,12 @@
 from django import forms
 
 from .models import Input
-from .models import Var
+from .models import Varia
+
+
+class UserModelChoiceField(forms.ModelChoiceField):
+    def label_from_instance(self, obj):
+         return obj.name
 
 
 
@@ -11,6 +16,15 @@ class SizeForm(forms.ModelForm):
         fields = ['row_size', 'col_size']
 
 class InputForm(forms.ModelForm):
+    input_1 = UserModelChoiceField(queryset=Varia.objects.all())
+    input_2 = UserModelChoiceField(queryset=Varia.objects.all())
+    def __init__(self, *args, **kwargs):
+        username = kwargs.pop('username', None)
+        super(InputForm, self).__init__(*args, **kwargs)
+        if username:
+            self.fields['input_1'].queryset = Varia.objects.filter(user__username=username)
+            self.fields['input_2'].queryset = Varia.objects.filter(user__username=username)
+
     class Meta:
         model = Input
         fields = ['input_type']
@@ -18,16 +32,10 @@ class InputForm(forms.ModelForm):
             'input_type': ('Data'),
         }
 
-class SelectForm(forms.ModelForm):
-    input_1 = forms.ModelChoiceField(queryset=Var.objects.all())
-    input_2 = forms.ModelChoiceField(queryset=Var.objects.all())
-    class Meta:
-        model = Input
-        fields = ('input_1', 'input_2',)
         
 class EntryForm(forms.ModelForm):
     class Meta:
-        model = Var
+        model = Varia
         fields = ('row1element1', 'row1element2', 'row1element3', 'row1element4', 'row1element5', 
                     'row2element1', 'row2element2', 'row2element3', 'row2element4', 'row2element5',
                     'row3element1', 'row3element2', 'row3element3', 'row3element4', 'row3element5',
@@ -36,7 +44,23 @@ class EntryForm(forms.ModelForm):
                     )
 
 class RemoveForm(forms.ModelForm):
-    input_1 = forms.ModelChoiceField(queryset=Var.objects.all())
+    input_1 = UserModelChoiceField(queryset=Varia.objects.all())
+    def __init__(self, *args, **kwargs):
+        username = kwargs.pop('username', None)
+        super(RemoveForm, self).__init__(*args, **kwargs)
+        if username:
+            self.fields['input_1'].queryset = Varia.objects.filter(user__username=username)
+    class Meta:
+        model = Input
+        fields = ('input_1',)
+
+class ViewerForm(forms.ModelForm):
+    input_1 = UserModelChoiceField(queryset=Varia.objects.all())
+    def __init__(self, *args, **kwargs):
+        username = kwargs.pop('username', None)
+        super(ViewerForm, self).__init__(*args, **kwargs)
+        if username:
+            self.fields['input_1'].queryset = Varia.objects.filter(user__username=username)
     class Meta:
         model = Input
         fields = ('input_1',)
@@ -51,24 +75,8 @@ class EntryNewForm(forms.ModelForm):
         for field in exclude_list:
             del self.fields[field]
     class Meta:
-        model = Var
+        model = Varia
         fields = '__all__'
-
-
-
-
-#def EntryNewForm(self, exclude_list, *args, **kwargs):
-#    class MyEntryNewForm(forms.ModelForm):
- #       class Meta:
- #           model = Var
-  #          exclude = exclude_list
-
-   #     def __init__(self):
-   #         super(MyEntryNewForm, self).__init__(*args, **kwargs)
-#
- #   return MyEntryNewForm()
-
-
 
 
 

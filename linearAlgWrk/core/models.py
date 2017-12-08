@@ -35,7 +35,7 @@ class Profile(models.Model):
 
 
 
-class Var(models.Model):
+class Varia(models.Model):
     user = models.ForeignKey(User, null=True)
     name =  models.CharField(max_length = 12, null=True)
     row_length = models.IntegerField(null=True)
@@ -76,12 +76,13 @@ class Input(models.Model):
     row_size = models.CharField(max_length=1, choices=SIZE_CHOICES)
     input_type = models.CharField(max_length=12, choices=INPUT_CHOICES)
     queried_date = models.DateTimeField(default = timezone.now)
+    #choice = forms.ModelChoiceField(queryset=Varia.objects.filter(name = (request.user.username)))
     def __str__(self):
         return self.input_type
 
 class Output(models.Model):
-    startVar = models.ForeignKey('Var', related_name = 'startVar', null=True, on_delete=models.CASCADE,)
-    endVar = models.ForeignKey('Var', related_name = 'endVar', null=True, on_delete=models.CASCADE,) 
+    startVar = models.ForeignKey('Varia', related_name = 'startVar', null=True, on_delete=models.CASCADE,)
+    endVar = models.ForeignKey('Varia', related_name = 'endVar', null=True, on_delete=models.CASCADE,) 
 
 
 

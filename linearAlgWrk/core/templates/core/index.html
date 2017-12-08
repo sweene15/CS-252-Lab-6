@@ -47,10 +47,28 @@
       		  			<button type="submit" class="save_input">Enter</button>
 				</p>
     			</form>
-
-
-	
+			<form action="{% url 'remove' %}" method="POST" class="remove_Entry">{% csrf_token %}
+				<p class="inner_form">
+					{{ remove_form }}
+      		  			<button type="submit" class="save_input">Enter</button>
+				</p>
+    			</form>
+			<form action="{% url 'viewer' %}" method="POST" class="view_Entry">{% csrf_token %}
+				<p class="inner_form">
+					{{ viewer_form }}
+      		  			<button type="submit" class="save_input">Enter</button>
+				</p>
+    			</form>
 		</div>
+
+		<div class='viewer'>
+			<p>{{array_row1}}</p>
+			<p>{{array_row2}}</p>
+			<p>{{array_row3}}</p>
+			<p>{{array_row4}}</p>
+			<p>{{array_row5}}</p>
+		</div>
+
 	</body>
 
 </html>
