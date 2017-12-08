@@ -39,12 +39,12 @@ class MainView(TemplateView):
             context['output3'] = request.session['output3']
             context['output4'] = request.session['output4']
 
-        if 'array_row1' in request.session:
+        if 'array_row0' in request.session:
+            context['array_row0'] = request.session['array_row0']
             context['array_row1'] = request.session['array_row1']
             context['array_row2'] = request.session['array_row2']
             context['array_row3'] = request.session['array_row3']
             context['array_row4'] = request.session['array_row4']
-            context['array_row5'] = request.session['array_row5']
 
         if  'dataFlag' in request.session:
             data_flag = True
@@ -258,23 +258,23 @@ class InputFormView(FormView):
                         result.append(row)
                     logging.warning(result)
                     if(len(result) > 4):
-                        request.session['output4'] = ' '.join(str(v) for v in result[4]) 
+                        request.session['output4'] = ', '.join(str(v) for v in result[4]) 
                     else:
                         request.session['output4'] = ''
                     if(len(result) > 3):
-                        request.session['output3'] = ' '.join(str(v) for v in result[3])
+                        request.session['output3'] = ', '.join(str(v) for v in result[3])
                     else:
                         request.session['output3'] = ''
                     if(len(result) > 2):
-                        request.session['output2'] = ' '.join(str(v) for v in result[2])
+                        request.session['output2'] = ', '.join(str(v) for v in result[2])
                     else:
                         request.session['output2'] = ''
                     if(len(result) > 1):
-                        request.session['output1'] = ' '.join(str(v) for v in result[1])
+                        request.session['output1'] = ', '.join(str(v) for v in result[1])
                     else:
                         request.session['output1'] = ''
                     if(len(result) > 0):
-                        request.session['output0'] = ' '.join(str(v) for v in result[0])
+                        request.session['output0'] = ', '.join(str(v) for v in result[0])
                     else:
                         request.session['output0'] = ''
                 else:
@@ -295,23 +295,23 @@ class InputFormView(FormView):
                             for col_b in zip_b] for row_a in a]
                     logging.warning(result)
                     if(len(result) > 4):
-                        request.session['output4'] = ' '.join(str(v) for v in result[4])
+                        request.session['output4'] = ', '.join(str(v) for v in result[4])
                     else:
                         request.session['output4'] = ''
                     if(len(result) > 3):
-                        request.session['output3'] = ' '.join(str(v) for v in result[3])
+                        request.session['output3'] = ', '.join(str(v) for v in result[3])
                     else:
                         request.session['output3'] = ''
                     if(len(result) > 2):
-                        request.session['output2'] = ' '.join(str(v) for v in result[2])
+                        request.session['output2'] = ', '.join(str(v) for v in result[2])
                     else:
                         request.session['output2'] = ''
                     if(len(result) > 1):
-                        request.session['output1'] = ' '.join(str(v) for v in result[1])
+                        request.session['output1'] = ', '.join(str(v) for v in result[1])
                     else:
                         request.session['output1'] = ''
                     if(len(result) > 0):
-                        request.session['output0'] = ' '.join(str(v) for v in result[0])
+                        request.session['output0'] = ', '.join(str(v) for v in result[0])
                     else:
                         request.session['output0'] = ''
                 else:
@@ -327,23 +327,23 @@ class InputFormView(FormView):
                 rref(mtx1)
                 result = mtx1
                 if(len(result) > 4):
-                    request.session['output4'] = ' '.join(str(v) for v in result[4])
+                    request.session['output4'] = ', '.join(str(v) for v in result[4])
                 else:
                     request.session['output4'] = ''
                 if(len(result) > 3):
-                    request.session['output3'] = ' '.join(str(v) for v in result[3])
+                    request.session['output3'] = ', '.join(str(v) for v in result[3])
                 else:
                     request.session['output3'] = ''
                 if(len(result) > 2):
-                    request.session['output2'] = ' '.join(str(v) for v in result[2])
+                    request.session['output2'] = ', '.join(str(v) for v in result[2])
                 else:
                     request.session['output2'] = ''
                 if(len(result) > 1):
-                    request.session['output1'] = ' '.join(str(v) for v in result[1])
+                    request.session['output1'] = ', '.join(str(v) for v in result[1])
                 else:
                     request.session['output1'] = ''
                 if(len(result) > 0):
-                    request.session['output0'] = ' '.join(str(v) for v in result[0])
+                    request.session['output0'] = ', '.join(str(v) for v in result[0])
                 else:
                     request.session['output0'] = ''
 
@@ -369,23 +369,23 @@ class InputFormView(FormView):
                     result = inverse(mtx1)
                     logging.warning(result)
                     if(len(result) > 4):
-                        request.session['output4'] = ' '.join(str(v) for v in result[4])
+                        request.session['output4'] = ', '.join(str(v) for v in result[4])
                     else:
                         request.session['output4'] = ''
                     if(len(result) > 3):
-                        request.session['output3'] = ' '.join(str(v) for v in result[3])
+                        request.session['output3'] = ', '.join(str(v) for v in result[3])
                     else:
                         request.session['output3'] = ''
                     if(len(result) > 2):
-                        request.session['output2'] = ' '.join(str(v) for v in result[2])
+                        request.session['output2'] = ', '.join(str(v) for v in result[2])
                     else:
                         request.session['output2'] = ''
                     if(len(result) > 1):
-                        request.session['output1'] = ' '.join(str(v) for v in result[1])
+                        request.session['output1'] = ', '.join(str(v) for v in result[1])
                     else:
                         request.session['output1'] = ''
                     if(len(result) > 0):
-                        request.session['output0'] = ' '.join(str(v) for v in result[0])
+                        request.session['output0'] = ', '.join(str(v) for v in result[0])
                     else:
                         request.session['output0'] = ''
 
@@ -471,100 +471,85 @@ class ViewerFormView(FormView):
     def post(self, request, *args, **kwargs):
         viewer_form = self.form_class(request.POST)
         if viewer_form.is_valid():
-            
-            request.session['array_test'] = 'this is a test'
             var1 = viewer_form.cleaned_data['input_1']
+            col1 = var1.row_length
+            row1 = var1.col_length
+            mtx1 = [ ([0] * col1) for row in range(row1) ]
+            if  var1.row1element1 != None:
+                mtx1[0][0] = int(var1.row1element1)
+            if  var1.row1element2 != None:
+                mtx1[0][1] = int(var1.row1element2)
+            if  var1.row1element3 != None:
+                mtx1[0][2] = int(var1.row1element3)
+            if  var1.row1element4 != None:
+                mtx1[0][3] = int(var1.row1element4)
+            if  var1.row1element5 != None:
+                mtx1[0][4] = int(var1.row1element5)
+            if  var1.row2element1 != None:
+                mtx1[1][0] = int(var1.row2element1)
+            if  var1.row2element2 != None:
+                mtx1[1][1] = int(var1.row2element2)
+            if  var1.row2element3 != None:
+                mtx1[1][2] = int(var1.row2element3)
+            if  var1.row2element4 != None:
+                mtx1[1][3] = int(var1.row2element4)
+            if  var1.row2element5 != None:
+                mtx1[1][4] = int(var1.row2element5)
+            if  var1.row3element1 != None:
+                mtx1[2][0] = int(var1.row3element1)
+            if  var1.row3element2 != None:
+                mtx1[2][1] = int(var1.row3element2)
+            if  var1.row3element3 != None:
+                mtx1[2][2] = int(var1.row3element3)
+            if  var1.row3element4 != None:
+                mtx1[2][3] = int(var1.row3element4)
+            if  var1.row3element5 != None:
+                mtx1[2][4] = int(var1.row3element5)
+            if  var1.row4element1 != None:
+                mtx1[3][0] = int(var1.row4element1)
+            if  var1.row4element2 != None:
+                mtx1[3][1] = int(var1.row4element2)
+            if  var1.row4element3 != None:
+                mtx1[3][2] = int(var1.row4element3)
+            if  var1.row4element4 != None:
+                mtx1[3][3] = int(var1.row4element4)
+            if  var1.row4element5 != None:
+                mtx1[3][4] = int(var1.row4element5)
+            if  var1.row5element1 != None:
+                mtx1[4][0] = int(var1.row5element1)
+            if  var1.row5element2 != None:
+                mtx1[4][1] = int(var1.row5element2)
+            if  var1.row5element3 != None:
+                mtx1[4][2] = int(var1.row5element3)
+            if  var1.row5element4 != None:
+                mtx1[4][3] = int(var1.row5element4)
+            if  var1.row5element5 != None:
+                mtx1[4][4] = int(var1.row5element5)
 
-            r1e1 = var1.row1element1
-            if  r1e1 == None:
-                r1e1 = ''
-            r1e2 = var1.row1element2
-            if  r1e2 == None:
-                r1e2 = ''
-            r1e3 = var1.row1element3
-            if  r1e3 == None:
-                r1e3 = ''
-            r1e4 = var1.row1element4
-            if  r1e4 == None:
-                r1e4 = ''
-            r1e5 = var1.row1element5
-            if  r1e5 == None:
-                r1e5 = ''
-            r2e1 = var1.row2element1
-            if  r2e1 == None:
-                r2e1 = ''
-            r2e2 = var1.row2element2
-            if  r2e2 == None:
-                r2e2 = ''
-            r2e3 = var1.row2element3
-            if  r2e3 == None:
-                r2e3 = ''
-            r2e4 = var1.row2element4
-            if  r2e4 == None:
-                r2e4 = ''
-            r2e5 = var1.row2element5
-            if  r2e5 == None:
-                r2e5 = ''
-            r3e1 = var1.row3element1
-            if  r3e1 == None:
-                r3e1 = ''
-            r3e2 = var1.row3element2
-            if  r3e2 == None:
-                r3e2 = ''
-            r3e3 = var1.row3element3
-            if  r3e3 == None:
-                r3e3 = ''
-            r3e4 = var1.row3element4
-            if  r3e4 == None:
-                r3e4 = ''
-            r3e5 = var1.row3element5
-            if  r3e5 == None:
-                r3e5 = ''
-            r4e1 = var1.row4element1
-            if  r4e1 == None:
-                r4e1 = ''
-            r4e2 = var1.row4element2
-            if  r4e2 == None:
-                r4e2 = ''
-            r4e3 = var1.row4element3
-            if  r4e3 == None:
-                r4e3 = ''
-            r4e4 = var1.row4element4
-            if  r4e4 == None:
-                r4e4 = ''
-            r4e5 = var1.row4element5
-            if  r4e5 == None:
-                r4e5 = ''
-            r5e1 = var1.row5element1
-            if  r5e1 == None:
-                r5e1 = ''
-            r5e2 = var1.row5element2
-            if  r5e2 == None:
-                r5e2 = ''
-            r5e3 = var1.row5element3
-            if  r5e3 == None:
-                r5e3 = ''
-            r5e4 = var1.row5element4
-            if  r5e4 == None:
-                r5e4 = ''
-            r5e5 = var1.row5element5
-            if  r5e5 == None:
-                r5e5 = ''
-            
-            array_row1 ='{}   {}   {}   {}   {}\n'.format(r1e1, r1e2, r1e3, r1e4, r1e5)
-            array_row2 ='{}   {}   {}   {}   {}\n'.format(r2e1, r2e2, r2e3, r2e4, r2e5)
-            array_row3 ='{}   {}   {}   {}   {}\n'.format(r3e1, r3e2, r3e3, r3e4, r3e5)
-            array_row4 ='{}   {}   {}   {}   {}\n'.format(r4e1, r4e2, r4e3, r4e4, r4e5)
-            array_row5 ='{}   {}   {}   {}   {}\n'.format(r5e1, r5e2, r5e3, r5e4, r5e5)
+            result = mtx1
 
-            request.session['array_row1'] = array_row1
-            request.session['array_row2'] = array_row2
-            request.session['array_row3'] = array_row3
-            request.session['array_row4'] = array_row4
-            request.session['array_row5'] = array_row5
+            if(len(result) > 4):
+                request.session['array_row4'] = ', '.join(str(v) for v in result[4])
+            else:
+                request.session['array_row4'] = ''
+            if(len(result) > 3):
+                request.session['array_row3'] = ', '.join(str(v) for v in result[3])
+            else:
+                request.session['array_row3'] = ''
+            if(len(result) > 2):
+                request.session['array_row2'] = ', '.join(str(v) for v in result[2])
+            else:
+                request.session['array_row2'] = ''
+            if(len(result) > 1):
+                request.session['array_row1'] = ', '.join(str(v) for v in result[1])
+            else:
+                request.session['array_row1'] = ''
+            if(len(result) > 0):
+                request.session['array_row0'] = ', '.join(str(v) for v in result[0])
+            else:
+                request.session['array_row0'] = ''
 
-            #viewer_form.save()
-            return redirect('/')
+                return redirect('/')
         else:
             return redirect('/')
 

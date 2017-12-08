@@ -1,0 +1,57 @@
+h1 {
+	color: #6EFFFF;
+}
+p {
+	color: #000000;
+}
+
+.inputblock {
+	margin-bottom: 70px;
+	margin-left: 20px;
+}
+
+.input label{
+	font-family: 'Centaur';
+   	font-size: 24px;
+	vertical-align:middle;
+   
+}
+.input input, textarea{
+	margin-left: 10px;
+	width: 50%;
+	height: 24px;
+	vertical-align:middle;
+}
+.save_input{
+	vertical-align:middle;
+	height: 24px;
+}
+.sizeEntry{
+	float: left;
+	clear: left;
+
+}
+.viewer {
+	float: right;
+	clear: right;
+	font-size: 24px;
+	font-family: 'Centaur';
+	margin-right: 10%;
+}
+.output{
+	float: left;
+	clear: left;
+	font-size: 24px;
+	font-family: 'Centaur';
+	margin-left: 10%
+}
+.view_Entry {
+	margin-right: 5%;
+	float: right;
+	clear: right;
+}
+.remove_Entry{
+	margin-right: 5%;
+	float: right;
+	clear: right;
+}
