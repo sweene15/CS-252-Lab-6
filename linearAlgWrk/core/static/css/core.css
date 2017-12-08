@@ -26,3 +26,32 @@ p {
 	vertical-align:middle;
 	height: 24px;
 }
+.sizeEntry{
+	float: left;
+	clear: left;
+
+}
+.viewer {
+	float: right;
+	clear: right;
+	font-size: 24px;
+	font-family: 'Centaur';
+	margin-right: 10%;
+}
+.output{
+	float: left;
+	clear: left;
+	font-size: 24px;
+	font-family: 'Centaur';
+	margin-left: 10%
+}
+.view_Entry {
+	margin-right: 5%;
+	float: right;
+	clear: right;
+}
+.remove_Entry{
+	margin-right: 5%;
+	float: right;
+	clear: right;
+}

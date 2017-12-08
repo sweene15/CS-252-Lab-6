@@ -11,21 +11,13 @@
 		<header>
 	   	   	{% if user.is_authenticated %}
 				<p> Hello, {{ user.username }} </p>
-     	   			<a href="{% url 'logout' %}">logout</a>
+     	   			<a href="{% url 'logout' %}">Logout</a>
      			{% else %}
-       				 <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+       				 <a href="{% url 'login' %}">Login</a> / <a href="{% url 'signup' %}">Signup</a>
      			{% endif %}
-     			 <hr>
+			<hr>
 
 		</header>
-
-		<h1>Hello</h1>
-		<p>test</p>
-
-		<p>
-		{{ clean_row_size }}
-		{{ clean_col_size }}
-		</p>
 
 		<div class="inputblock">
 			<form action="{% url 'size' %}" method="POST" class="size_Entry">{% csrf_token %}
@@ -35,18 +27,131 @@
 				</p>
 			</form>
 		
-			<form action="{% url 'input' %}" method="POST" class="input">{% csrf_token %}
-				<p class="inner_form">	
-        				{{ input_form }}
-      		  			<button type="submit" class="save_input">Enter</button>
-				</p>
-    			</form>
 			<form action="{% url 'new_entry' %}" method="POST" class="data_Entry">{% csrf_token %}
-				<p class="inner_form">
-					{{ new_entry_form }}
+				<p class="inner_entry_form">
+
+					{% if new_entry_form.name %}
+						{{new_entry_form.name.errors}}
+						{{new_entry_form.name.label_tag}} {{new_entry_form.name}}
+					{% endif %}
+					<p class="row1">
+					{% if new_entry_form.row1element1 %}
+						{{new_entry_form.row1element1.errors}}
+						{{new_entry_form.row1element1}}
+					{% endif %}
+					{% if new_entry_form.row1element2 %}
+						{{new_entry_form.row1element2.errors}}
+						{{new_entry_form.row1element2}}
+					{% endif %}
+					{% if new_entry_form.row1element3 %}
+						{{new_entry_form.row1element3.errors}}
+						{{new_entry_form.row1element3}}
+					{% endif %}
+					{% if new_entry_form.row1element4 %}
+						{{new_entry_form.row1element4.errors}}
+						{{new_entry_form.row1element4}}
+					{% endif %}
+					{% if new_entry_form.row1element5 %}
+						{{new_entry_form.row1element5.errors}}
+						{{new_entry_form.row1element5}}
+					{% endif %}
+					</p>
+					<p class="row2">
+					{% if new_entry_form.row2element1 %}
+						{{new_entry_form.row2element1.errors}}
+						{{new_entry_form.row2element1}}
+					{% endif %}
+					{% if new_entry_form.row2element2 %}
+						{{new_entry_form.row2element2.errors}}
+						{{new_entry_form.row2element2}}
+					{% endif %}
+					{% if new_entry_form.row2element3 %}
+						{{new_entry_form.row2element3.errors}}
+						{{new_entry_form.row2element3}}
+					{% endif %}
+					{% if new_entry_form.row2element4 %}
+						{{new_entry_form.row2element4.errors}}
+						{{new_entry_form.row2element4}}
+					{% endif %}
+					{% if new_entry_form.row2element5 %}
+						{{new_entry_form.row2element5.errors}}
+						{{new_entry_form.row2element5}}
+					{% endif %}
+					</p>
+					<p class="row3">
+					{% if new_entry_form.row3element1 %}
+						{{new_entry_form.row3element1.errors}}
+						{{new_entry_form.row3element1}}
+					{% endif %}
+					{% if new_entry_form.row3element2 %}
+						{{new_entry_form.row3element2.errors}}
+						{{new_entry_form.row3element2}}
+					{% endif %}
+					{% if new_entry_form.row3element3 %}
+						{{new_entry_form.row3element3.errors}}
+						{{new_entry_form.row3element3}}
+					{% endif %}
+					{% if new_entry_form.row3element4 %}
+						{{new_entry_form.row3element4.errors}}
+						{{new_entry_form.row3element4}}
+					{% endif %}
+					{% if new_entry_form.row3element5 %}
+						{{new_entry_form.row3element5.errors}}
+						{{new_entry_form.row3element5}}
+					{% endif %}
+					</p>
+					<p class="row4">
+					{% if new_entry_form.row4element1 %}
+						{{new_entry_form.row4element1.errors}}
+						{{new_entry_form.row4element1}}
+					{% endif %}
+					{% if new_entry_form.row4element2 %}
+						{{new_entry_form.row4element2.errors}}
+						{{new_entry_form.row4element2}}
+					{% endif %}
+					{% if new_entry_form.row4element3 %}
+						{{new_entry_form.row4element3.errors}}
+						{{new_entry_form.row4element3}}
+					{% endif %}
+					{% if new_entry_form.row4element4 %}
+						{{new_entry_form.row4element4.errors}}
+						{{new_entry_form.row4element4}}
+					{% endif %}
+					{% if new_entry_form.row4element5 %}
+						{{new_entry_form.row4element5.errors}}
+						{{new_entry_form.row4element5}}
+					{% endif %}
+					</p>
+					<p class="row5">
+					{% if new_entry_form.row5element1 %}
+						{{new_entry_form.row5element1.errors}}
+						{{new_entry_form.row5element1}}
+					{% endif %}
+					{% if new_entry_form.row5element2 %}
+						{{new_entry_form.row5element2.errors}}
+						{{new_entry_form.row5element2}}
+					{% endif %}
+					{% if new_entry_form.row5element3 %}
+						{{new_entry_form.row5element3.errors}}
+						{{new_entry_form.row5element3}}
+					{% endif %}
+					{% if new_entry_form.row5element4 %}
+						{{new_entry_form.row5element4.errors}}
+						{{new_entry_form.row5element4}}
+					{% endif %}
+					{% if new_entry_form.row5element5 %}
+						{{new_entry_form.row5element5.errors}}
+						{{new_entry_form.row5element5}}
+					{% endif %}
+					</p>
+
+
+					{% if new_entry_form %}
       		  			<button type="submit" class="save_input">Enter</button>
+					{% endif %}
 				</p>
     			</form>
+			<hr>
 			<form action="{% url 'remove' %}" method="POST" class="remove_Entry">{% csrf_token %}
 				<p class="inner_form">
 					{{ remove_form }}
@@ -59,6 +164,13 @@
       		  			<button type="submit" class="save_input">Enter</button>
 				</p>
     			</form>
+			<form action="{% url 'input' %}" method="POST" class="input_Entry">{% csrf_token %}
+				<p class="inner_form">	
+        				{{ input_form }}
+      		  			<button type="submit" class="save_input">Enter</button>
+				</p>
+    			</form>
+
 		</div>
 
 		<div class='viewer'>
@@ -68,7 +180,13 @@
 			<p>{{array_row4}}</p>
 			<p>{{array_row5}}</p>
 		</div>
-
+		<div class = 'output'>
+			<p>{{output0}}</p>
+			<p>{{output1}}</p>
+			<p>{{output2}}</p>
+			<p>{{output3}}</p>
+			<p>{{output4}}</p>
+		</div>
 	</body>
 
 </html>
