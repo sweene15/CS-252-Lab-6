@@ -1,13 +1,70 @@
-h1 {
-	color: #6EFFFF;
-}
-p {
-	color: #000000;
+* {
+   font-family: 'Centaur';
+   font-size; 20px;
 }
 
+body{
+	background-color: rgba(0,50,255,.3);
+
+}
+input, select{
+	background-color: rgba(0,50,255,.2);
+	border-color: rgba(0,50,255,.3);
+	font-size: 24px;
+	font-weight: bold;
+	width: 100px;
+	height: 36px;
+	vertical-align:middle;
+}
+label{
+	font-size: 20px;
+	padding-right: 5px;
+	padding-left: 10px;
+	vertical-align:middle;
+
+}
+
+button{
+	margin-left: 12px;
+	height: 24px;
+	vertical-align:middle;
+}
+
+.logout_button{
+	color: rgba(0,50,255,1)
+}
+
+.mat_name{
+	padding-bottom:10px;
+	width = 150px;
+}
+.row1, .row2, .row3, .row4, .row5, .save_entry_input{
+	margin-left:40px;
+
+
+}
+
+.header_title{
+	float:left;
+	clear: left;
+	margin-left: 2%;
+	margin-bottom: 50px;
+}	
+
+
+.login_block{
+	float: right;
+	clear: right;
+	font-size: 18px;
+	margin-right:2%;
+	margin-bottom: 100px;
+	margin-top: 20px;
+}
 .inputblock {
-	margin-bottom: 70px;
-	margin-left: 20px;
+	float: left;
+	clear: left;
+	margin-bottom: 75px;
+	margin-left: 3%;
 }
 
 .input label{
@@ -36,22 +93,28 @@ p {
 	clear: right;
 	font-size: 24px;
 	font-family: 'Centaur';
-	margin-right: 10%;
+	margin-right: 4%;
 }
 .output{
 	float: left;
 	clear: left;
 	font-size: 24px;
 	font-family: 'Centaur';
-	margin-left: 10%
+	margin-left: 6%
 }
 .view_Entry {
-	margin-right: 5%;
+	margin-right: 3%;
 	float: right;
 	clear: right;
 }
 .remove_Entry{
-	margin-right: 5%;
+	margin-right: 3%;
 	float: right;
 	clear: right;
+}
+.input_Entry{
+	float: left;
+	clear: left;
+	margin-left: 3%
+
 }

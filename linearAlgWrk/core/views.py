@@ -548,8 +548,7 @@ class ViewerFormView(FormView):
                 request.session['array_row0'] = ', '.join(str(v) for v in result[0])
             else:
                 request.session['array_row0'] = ''
-
-                return redirect('/')
+            return redirect('/')
         else:
             return redirect('/')
 
@@ -632,7 +631,7 @@ def inverse(m):
     for r in range(len(m)):
         cofactorRow = []
         for c in range(len(m)):
-            minor = minor(m,r,c)
+            minor = getMinor(m,r,c)
             cofactorRow.append(((-1)**(r+c)) * det(minor))
         cofactors.append(cofactorRow)
     cofactors = transpose(cofactors)
@@ -644,6 +643,6 @@ def inverse(m):
 def transpose(m):
     return list(map(list,zip(*m)))
 
-def minor(m,i,j):
+def getMinor(m,i,j):
     return [row[:j] + row[j+1:] for row in (m[:i]+m[i+1:])]
 

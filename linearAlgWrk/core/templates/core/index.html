@@ -9,13 +9,15 @@
 	</head>
 	<body>
 		<header>
+			<h1 class = "header_title"> Linear Algebra Workshop </h1>
+			<div class = "login_block">
 	   	   	{% if user.is_authenticated %}
 				<p> Hello, {{ user.username }} </p>
-     	   			<a href="{% url 'logout' %}">Logout</a>
+     	   			<a href="{% url 'logout' %}" class ="logout_button">Logout</a>
      			{% else %}
        				 <a href="{% url 'login' %}">Login</a> / <a href="{% url 'signup' %}">Signup</a>
      			{% endif %}
-			<hr>
+			</div>
 
 		</header>
 
@@ -29,11 +31,12 @@
 		
 			<form action="{% url 'new_entry' %}" method="POST" class="data_Entry">{% csrf_token %}
 				<p class="inner_entry_form">
-
+					<div class="mat_name">
 					{% if new_entry_form.name %}
 						{{new_entry_form.name.errors}}
 						{{new_entry_form.name.label_tag}} {{new_entry_form.name}}
 					{% endif %}
+					</div>
 					<p class="row1">
 					{% if new_entry_form.row1element1 %}
 						{{new_entry_form.row1element1.errors}}
@@ -147,11 +150,11 @@
 
 
 					{% if new_entry_form %}
-      		  			<button type="submit" class="save_input">Enter</button>
+      		  			<button type="submit" class="save_entry_input">Enter</button>
 					{% endif %}
 				</p>
     			</form>
-			<hr>
+		</div>
 			<form action="{% url 'remove' %}" method="POST" class="remove_Entry">{% csrf_token %}
 				<p class="inner_form">
 					{{ remove_form }}
@@ -164,14 +167,6 @@
       		  			<button type="submit" class="save_input">Enter</button>
 				</p>
     			</form>
-			<form action="{% url 'input' %}" method="POST" class="input_Entry">{% csrf_token %}
-				<p class="inner_form">	
-        				{{ input_form }}
-      		  			<button type="submit" class="save_input">Enter</button>
-				</p>
-    			</form>
-
-		</div>
 
 		<div class='viewer'>
 			<p>{{array_row0}}</p>
@@ -180,6 +175,15 @@
 			<p>{{array_row3}}</p>
 			<p>{{array_row4}}</p>
 		</div>
+
+			<form action="{% url 'input' %}" method="POST" class="input_Entry">{% csrf_token %}
+				<p class="inner_form">	
+        				{{ input_form }}
+      		  			<button type="submit" class="save_input">Enter</button>
+				</p>
+    			</form>
+
+
 		<div class = 'output'>
 			<p>{{output0}}</p>
 			<p>{{output1}}</p>
